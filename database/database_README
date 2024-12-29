@@ -1,0 +1,33 @@
+# Database
+
+ ## Table Design
+
+| Top Left Latitude | Top Left Longitude | Bottom Right Latitude | Bottom Right Longitude | Lights On/Off  | Year | Month | Day | Hour     | Minute     | Second     |
+|-------------------|--------------------|-----------------------|------------------------|----------------|------|-------|-----|----------|------------|------------|
+| Float             | Float              | Float                 | Float                  | Int            | Int  | Int   | Int | Int      | Int        | Int        |
+| Latitude          | Longitude          | Latitude              | Longitude              | 1 - On 0 - Off | Year | Month | Day | GMT Hour | GMT Minute | GMT Second |
+
+
+## API
+### Create ###
+Call once to create the database
+
+### Write ###
+Args:
+- data: a list following the table format
+
+Returns:
+- Nothing
+
+Post-Condition:
+- The data gets stored into the database
+
+### Get ###
+Args:
+- tllat: Top Left Corner Latitude
+- tllong: Top Left Corner Longitude
+- brlat: Bottom Right Corner Latitude
+- brlong: Bottom Right Corner Longitude
+
+Returns:
+- A list of lists with all stored instances of the given coordinates
